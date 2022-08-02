@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import interlemd.instituto.api.academico.dtos.StudentDTO;
 import interlemd.instituto.api.academico.modelo.Student;
 import interlemd.instituto.api.academico.services.StudentService;
 
@@ -29,6 +30,15 @@ public class StudentController {
 	System.out.println("Fin Controllador");	 
 	 return new ResponseEntity(list, HttpStatus.OK);
 	 }
+	
+	@GetMapping("/lista/ids")
+	public ResponseEntity<List<StudentDTO>> listIds(){
+	System.out.println("Inicio Controllador");
+	 List<StudentDTO> list = studentService.listIds();
+	System.out.println("Fin Controllador");	 
+	 return new ResponseEntity(list, HttpStatus.OK);
+	 }
+	
 	
 	
 

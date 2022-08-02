@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import interlemd.instituto.api.academico.dtos.StudentDTO;
 import interlemd.instituto.api.academico.modelo.Student;
 import interlemd.instituto.api.academico.repository.StudentRepository;
 
@@ -22,6 +23,14 @@ public class StudentService {
 			System.out.println("Fin StudentService");
 			return list;
 	    }
+	 
+	 public List<StudentDTO> listIds(){
+			System.out.println("Inicio StudentService");
+			List<StudentDTO> list= studentRepository.findAllIds();
+			System.out.println("Fin StudentService");
+			return list;
+	    }
+	
 	
 	
 	 public void  save(Student producto){
